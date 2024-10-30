@@ -13,7 +13,7 @@ services:
 
         environment:
             # replace https://api.cobalt.tools/ with your instance's target url in same format
-            API_URL: "https://cobalt-i4en.onrender.com"
+            API_URL: "https://cobalt-or6l.onrender.com"
             # if you want to use cookies when fetching data from services, uncomment the next line and the lines under volume
             # COOKIE_PATH: "/cookies.json"
             # see docs/run-an-instance.md for more information
