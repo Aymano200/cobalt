@@ -308,7 +308,7 @@ export const runAPI = (express, app, __dirname) => {
         ]);
 
         return stream(res, { type: 'internal', ...streamInfo });
-    })
+    }
 
     app.get('/', (_, res) => {
         res.type('json');
