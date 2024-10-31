@@ -20,9 +20,9 @@ import { createResponse, normalizeRequest, getIP } from "../processing/request.j
 import * as APIKeys from "../security/api-keys.js";
 
 const git = {
-    branch: await getBranch(),
-    commit: await getCommit(),
-    remote: await getRemote(),
+    branch: env.branch || "unknown",
+    commit: env.commit || "unknown",
+    remote: env.remote || "unknown",
 }
 
 const version = await getVersion();
