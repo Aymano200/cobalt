@@ -359,4 +359,3 @@ export const runAPI = (express, app, __dirname) => {
             Bright("port: ") + env.apiPort + "\n"
         )
     })
-}
