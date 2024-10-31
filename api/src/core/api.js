@@ -221,14 +221,9 @@ export const runAPI = (express, app, __dirname) => {
 
     app.post('/', async (req, res) => {
         const request = req.body;
-        const lang = languageCode(req);
 
         if (!request.url) {
             return fail(res, "error.api.link.missing");
-        }
-
-        if (request.youtubeDubBrowserLang) {
-            request.youtubeDubLang = lang;
         }
 
         const { success, data: normalizedRequest } = await normalizeRequest(request);
@@ -293,6 +288,11 @@ export const runAPI = (express, app, __dirname) => {
         return stream(res, streamInfo);
     })
 
+    app.get('/itunnel', (req, res) => {
+        if (!req.ip.endsWith('127.0.0.1')) {
+            return res.sendStatus(403);
+        }
+
         if (String(req.query.id).length !== 21) {
             return res.sendStatus(400);
         }
@@ -308,7 +308,7 @@ export const runAPI = (express, app, __dirname) => {
         ]);
 
         return stream(res, { type: 'internal', ...streamInfo });
-    }
+    })
 
     app.get('/', (_, res) => {
         res.type('json');
@@ -339,10 +339,6 @@ export const runAPI = (express, app, __dirname) => {
         setGlobalDispatcher(new ProxyAgent(env.externalProxy))
     }
 
-    if (env.apiKeyURL) {
-        APIKeys.setup(env.apiKeyURL);
-    }
-
     app.listen(env.apiPort, env.listenAddress, () => {
         console.log(`\n` +
             Bright(Cyan("cobalt ")) + Bright("API ^ω⁠^") + "\n" +
@@ -357,5 +353,14 @@ export const runAPI = (express, app, __dirname) => {
 
             Bright("url: ") + Bright(Cyan(env.apiURL)) + "\n" +
             Bright("port: ") + env.apiPort + "\n"
-        )
+        );
+
+        if (env.apiKeyURL) {
+            APIKeys.setup(env.apiKeyURL);
+        }
+
+        if (env.cookiePath) {
+            Cookies.setup(env.cookiePath);
+        }
     })
+}
