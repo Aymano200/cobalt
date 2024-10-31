@@ -293,11 +293,6 @@ export const runAPI = (express, app, __dirname) => {
         return stream(res, streamInfo);
     })
 
-    app.get('/itunnel', (req, res) => {
-        if (!req.ip.endsWith('127.0.0.1')) {
-            return res.sendStatus(403);
-        }
-
         if (String(req.query.id).length !== 21) {
             return res.sendStatus(400);
         }
