@@ -132,7 +132,7 @@ export default async function(o) {
 
     let info;
     try {
-        info = await yt.getBasicInfo(o.id, o.youtubeHLS ? 'IOS' : 'ANDROID');
+        info = await yt.getBasicInfo(o.id, 'ANDROID');
     } catch(e) {
         if (e?.info?.reason === "This video is private") {
             return { error: "content.video.private" };
