@@ -1,0 +1,5 @@
+{
+    "youtube_oauth": [
+       "access_token=ya29.a0AeDClZAsRUllm7YaPz7rriynPCH4CZaRReeucB0RHpySvA9WkKm29qrhcLsJ0A2lleP-ZnsaIm1WWFQ4XV596TmIvnTLtnT0a_faQpKBzH1iZxMA3inDRH0q1wXfN_yiH8vZ5ZxYbDgv1EXV9nSWt86Szbx5zMeiki-YS_pC2b_WUwe3u0JraCgYKAcESARESFQHGX2MigyOAwDHamcquqEOfcReF3g0187; refresh_token=1//05E0qB_L0V2ddCgYIARAAGAUSNwF-L9IryvpktD6DSWRfdiLaQZyp3iWgw9S6UaykGTANI0jxkNCqMr9K1HB260m9R1l6QxQLXDc; scope=https://www.googleapis.com/auth/youtube-paid-content https://www.googleapis.com/auth/youtube; token_type=Bearer; expiry_date=2024-11-06T18:52:54.884Z"
+    ]
+}
