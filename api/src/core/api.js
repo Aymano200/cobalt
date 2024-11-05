@@ -22,9 +22,9 @@ import * as APIKeys from "../security/api-keys.js";
 import * as Cookies from "../processing/cookie/manager.js";
 
 const git = {
-    branch: await getBranch(),
-    commit: await getCommit(),
-    remote: await getRemote(),
+    branch: "unknown",
+    commit: "unknown",
+    remote: "unknown",
 }
 
 const version = await getVersion();
